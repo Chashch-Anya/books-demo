@@ -1,0 +1,37 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "test",
+      "author": "test"
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "author": "test"
+    },
+    {
+      "name": "q",
+      "author": "Q1",
+      "id": 4
+    }
+  ],
+
+  "speakers": [
+    {
+      "id": 2,
+      "firstName": "test",
+      "lastName": "test"
+    },
+    {
+      "id": 4,
+      "firstName": "test",
+      "lastName": "test"
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "id": 5
+    }
+  ]
+}

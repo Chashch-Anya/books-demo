@@ -1,0 +1,33 @@
+<div class="slide-out-bg"></div>
+<div class="slide-out">
+    <div class="slide-out-card">
+        {{#link-to "books" class="btn-back"}}
+        <span class="sr-only">Back</span>
+        {{/link-to}}
+        
+        <div class="slide-out-heading">
+            <div class="title">
+                <h3>New Book</h3>
+            </div>
+        </div>
+
+        <div class="slide-out-content">
+            {{!-- <form onsubmit={{action "saveBook"}}>
+                <div class="field">
+                    <laber>Book Name: </laber>
+                {{input type="text" placeholder="Book Name" value=name}}
+                </div>
+
+                <div class="field">
+                    <laber>Book author: </laber>
+                {{input type="text" placeholder="Book author" value=author}}
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-sumbit">save</button>
+                </div>
+            </form> --}}
+            {{book-form book=model onsumbit=(action "saveBook")}}
+        </div>
+    </div>
+</div>

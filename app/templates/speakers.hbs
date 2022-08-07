@@ -1,0 +1,20 @@
+<div class="panel-heading">
+    <div class="search">
+        {{input type="text" placeholder="Search by book name" value=search}}
+    </div>
+
+    <a href="btn-new">
+        <div class="sr-only">Add new book</div>
+    </a>
+</div>
+
+<div class="panel-content">
+    <h3 class="panel-title">Books</h3>
+    <ul class="collection">
+        {{#each model as |speakers|}}
+       {{speaker-item firstName=speakers.firstName lastName=speakers.lastName idSpeaker=speakers.id tagName='li'}}
+        {{/each}}
+    </ul>
+</div>
+
+{{outlet}}

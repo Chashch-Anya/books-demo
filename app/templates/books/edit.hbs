@@ -1,0 +1,18 @@
+<div class="slide-out-bg"></div>
+<div class="slide-out">
+    <div class="slide-out-card">
+        {{#link-to "books" class="btn-back"}}
+        <span class="sr-only">Back</span>
+        {{/link-to}}
+        
+        <div class="slide-out-heading">
+            <div class="title">
+                <h3>Edit Book: {{model.name}}</h3>
+            </div>
+        </div>
+
+        <div class="slide-out-content">
+            {{book-form books=model onsumbit=(action "saveBook")}}
+        </div>
+    </div>
+</div>

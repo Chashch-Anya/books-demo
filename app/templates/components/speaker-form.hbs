@@ -1,0 +1,15 @@
+<form onsubmit={{action "sumbitForm"}}>
+    <div class="field">
+        <laber>First Name: </laber>
+        {{input type="text" placeholder="First Name" value=speaker.firstName}}
+    </div>
+
+    <div class="field">
+        <laber>Last Name: </laber>
+        {{input type="text" placeholder="Last Name" value=speaker.lastName}}
+    </div>
+
+    <div class="form-footer">
+        <button type="submit" class="btn-sumbit">save</button>
+    </div>
+</form>
