@@ -6,17 +6,10 @@ import {later} from '@ember/runloop';
 export default Route.extend({
     dataService: service('data2'),
     queryParams: {
-      search: {
-        refreshModel: true
-      },
-      search_tag: {
-        refreshModel: true
-      }
+      search: {refreshModel: true},
+      search_tag: {refreshModel: true}
     },
-    model({
-      search,
-      search_tag
-    }) {
+    model({search,search_tag }) {
       let promise = new Promise((resolve, reject) => {
         later(async () => {
           try {
