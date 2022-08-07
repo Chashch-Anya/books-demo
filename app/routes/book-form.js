@@ -5,7 +5,6 @@ export default Route.extend({
 setupController(controller/*,model*/){
     this._super(...arguments);
     set(controller,'tags',[]);
-    set(controller,'uploadData',null);
     set(controller,'book','li');
 }
 });

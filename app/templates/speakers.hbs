@@ -1,20 +1,33 @@
-<div class="panel-heading">
-    <div class="search">
-        {{input type="text" placeholder="Search by book name" value=search}}
+<div class="container h-100">
+    <div class="htop">
+        <h2 class="text-center">Спикеры</h2>
+
+        <div class="form-row navbar-panel justify-content-between">
+
+            <div class="col-md-auto">
+                {{#link-to "speakers.create" class="btn-new"}}
+                <button class="btn btn-outline-primary my-2">Добавить спикера</button>
+                {{/link-to}}
+            </div>
+
+            <div class="col-md-auto search">
+                    {{input type="text" placeholder="Поиск по спикерам" value=search}}
+            </div>
+        </div>
+
+        <div class="panel-content">
+             {{#if isLoading}}
+            <div class="welcome-page">
+                <img src="/loading.gif" alt="Loading">
+            </div>
+            {{else}}
+            <ul class="collection">
+                {{#each model as |speakers|}}
+                {{speaker-item patronymic=speakers.patronymic firstName=speakers.firstName lastName=speakers.lastName idSpeaker=speakers.id tagName='li'}}
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
     </div>
-
-    <a href="btn-new">
-        <div class="sr-only">Add new book</div>
-    </a>
-</div>
-
-<div class="panel-content">
-    <h3 class="panel-title">Books</h3>
-    <ul class="collection">
-        {{#each model as |speakers|}}
-       {{speaker-item firstName=speakers.firstName lastName=speakers.lastName idSpeaker=speakers.id tagName='li'}}
-        {{/each}}
-    </ul>
-</div>
-
-{{outlet}}
+    {{outlet}}
+    </div>

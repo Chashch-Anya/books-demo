@@ -1,15 +1,31 @@
 <form onsubmit={{action "sumbitForm"}}>
-    <div class="field">
-        <laber>First Name: </laber>
-        {{input type="text" placeholder="First Name" value=speaker.firstName}}
-    </div>
+    <div class="skide-out-content">
 
-    <div class="field">
-        <laber>Last Name: </laber>
-        {{input type="text" placeholder="Last Name" value=speaker.lastName}}
-    </div>
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Имя автора: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg" id="inputTitle" placeholder="Имя автора" value=speaker.firstName}}
+            </div>
+        </div>
 
-    <div class="form-footer">
-        <button type="submit" class="btn-sumbit">save</button>
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Фамилия автора: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg" id="inputTitle" placeholder="Фамилия автора" value=speaker.lastName}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Отчество автора: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg" id="inputTitle" placeholder="Отчество автора" value=speaker.patronymic}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
+            </div>
+        </div>
     </div>
 </form>

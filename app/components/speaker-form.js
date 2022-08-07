@@ -4,7 +4,6 @@ export default Component.extend({
     actions:{
         sumbitForm(e){
             e.preventDefault();
-
             this.onsumbit(this.get('speaker'));
         }
     }

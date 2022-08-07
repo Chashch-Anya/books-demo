@@ -2,18 +2,17 @@
 <div class="slide-out">
     <div class="slide-out-card">
         {{#link-to "speakers" class="btn-back"}}
-        <span class="sr-only">Back</span>
+        <span class="sr-only">Назад</span>
         {{/link-to}}
         
         <div class="slide-out-heading">
             <div class="title">
-                <h3>Edit speaker</h3>
+                <h3>Редактирование информации о спикере</h3>
             </div>
         </div>
 
         <div class="slide-out-content">
             {{speaker-form speaker=model onsumbit=(action "saveSpeaker")}}
-
         </div>
     </div>
 </div>

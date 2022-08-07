@@ -12,23 +12,7 @@
         </div>
 
         <div class="slide-out-content">
-            {{!-- <form onsubmit={{action "saveSpeaker"}}>
-                <div class="field">
-                    <laber>First Name: </laber>
-                {{input type="text" placeholder="First Name" value=firstName}}
-                </div>
-
-                <div class="field">
-                    <laber>Last Name: </laber>
-                {{input type="text" placeholder="Last Name" value=lastName}}
-                </div>
-
-                <div class="form-footer">
-                    <button type="submit" class="btn-sumbit">save</button>
-                </div>
-            </form> --}}
             {{speaker-form speaker=model onsumbit=(action "saveSpeaker")}}
-
         </div>
     </div>
 </div>

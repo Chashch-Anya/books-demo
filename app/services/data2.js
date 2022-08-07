@@ -1,13 +1,19 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  getBooks(search) {
+  getBooks(search,search_tag) {
     let queryParams = '';
-    if(search)
+    if(search && search_tag)
+    {
+      queryParams=`?q=${search}&tags_like=${search_tag}`;
+    }
+    else if(search)
     {
       queryParams=`?q=${search}`;
+    } else if(search_tag)
+    {
+      queryParams=`?q=${search_tag}`
     }
-
     return fetch(`http://localhost:3000/books${queryParams}`).then((response) => response.json());
   },
   getBook(id) {
@@ -37,8 +43,14 @@ export default Service.extend({
     });
   },
 
-  getSpeakers() {
-    return fetch(`http://localhost:3000/speakers`).then((response) => response.json());
+  getSpeakers(search) {
+    let queryParams = '';
+    if(search)
+    {
+      queryParams=`?q=${search}`;
+    }
+
+    return fetch(`http://localhost:3000/speakers${queryParams}`).then((response) => response.json());
   },
   getSpeaker(id) {
     return fetch(`http://localhost:3000/speakers/${id}`).then((response) => response.json());

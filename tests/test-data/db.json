@@ -1,37 +1,104 @@
 {
-  "books": [
-    {
+  "books": [{
       "id": 1,
-      "name": "test",
-      "author": "test"
+      "name": "Гордость и предубеждения",
+      "author": "Джейн Остин",
+      "page_count": "331",
+      "pict": "",
+      "description": "",
+      "tags": [
+        "классика",
+        "проза"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Преступление и наказание",
+      "author": "Фёдор Михайлович Достоевский",
+      "page_count": "431",
+      "pict": "",
+      "description": "",
+      "tags": [
+        "классика",
+        "проза"
+      ]
     },
     {
       "id": 3,
-      "name": "test",
-      "author": "test"
-    },
-    {
-      "name": "q",
-      "author": "Q1",
-      "id": 4
-    }
-  ],
-
-  "speakers": [
-    {
-      "id": 2,
-      "firstName": "test",
-      "lastName": "test"
+      "name": "Арсен Люпен",
+      "author": "Леблан М.",
+      "page_count": "544",
+      "pict": "",
+      "description": "https://www.chitai-gorod.ru/catalog/book/2895808/",
+      "tags": [
+        "проза"
+      ]
     },
     {
       "id": 4,
-      "firstName": "test",
-      "lastName": "test"
+      "name": "Завтрашний день кошки",
+      "author": "Бернан Вербер",
+      "page_count": "320",
+      "pict": "",
+      "description": "https://www.chitai-gorod.ru/catalog/book/2909162/",
+      "tags": [
+        "фантастика",
+        "проза"
+      ]
     },
     {
-      "firstName": "q",
-      "lastName": "q",
-      "id": 5
+      "id": 5,
+      "name": "Эгоистичный ген",
+      "author": "Ричард Докинз",
+      "page_count": "512",
+      "pict": "",
+      "description": "https://www.chitai-gorod.ru/catalog/book/446491/",
+      "tags": [
+        "наука"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Обитаемый остров",
+      "author": "Аркадий и Борис Стругацкие",
+      "page_count": "512",
+      "pict": "",
+      "description": "https://www.chitai-gorod.ru/catalog/book/1053036/",
+      "tags": [
+        "антиутопия",
+        "проза"
+      ]
+    }
+  ],
+  "speakers": [{
+      "id": 1,
+      "firstName": "Анатолий",
+      "lastName": "Кузнецов",
+      "patronymic": "Анатольевич"
+    },
+    {
+      "id": 2,
+      "firstName": "Анастасия",
+      "lastName": "Ухова",
+      "patronymic": "Сергеевна"
+    },
+    {
+      "id": 3,
+      "firstName": "Сергей",
+      "lastName": "Борисов",
+      "patronymic": "Сергеевич"
+    },
+    {
+      "id": 4,
+      "firstName": "Татьяна",
+      "lastName": "Лесова",
+      "patronymic": "Анатольевна"
+    },
+    {
+      "id": 5,
+      "firstName": "Михаил",
+      "lastName": "Царь",
+      "patronymic": "Денисович"
     }
   ]
 }

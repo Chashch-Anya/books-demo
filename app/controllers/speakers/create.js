@@ -3,22 +3,23 @@ import {inject as service} from '@ember/service';
 import EmberObject from '@ember/object'
 
 export default Controller.extend({
-    init(){
-        this._super(...arguments);
-        this.set('speaker',EmberObject.create());
-        this.get('speaker').set('firstName','');
-        this.get('speaker').set('lastName','');
+  init() {
+    this._super(...arguments);
+    this.set('speaker', EmberObject.create());
+    this.get('speaker').set('firstName', '');
+    this.get('speaker').set('lastName', '');
+    this.get('speaker').set('patronymic', '');
+  },
+
+  dataService: service('data2'),
+  actions: {
+    async saveSpeaker(speaker) {
+      await this.get("dataService").createSpeaker(speaker);
+      this.transitionToRoute('speakers.index');
     },
 
-    dataService: service('data2'),
-    actions:{
-        async saveSpeaker(speaker){
-           await this.get("dataService").createSpeaker(speaker);
-            this.transitionToRoute('speakers.index');
-        },
-
-        changeName(firstName){
-            this.set('firstName',firstName);
-        }
-    }
+    // changeName(firstName, lastName, patronymic) {
+    //   this.set('firstName', 'lastName', 'patronymic');
+    // }
+  }
 });

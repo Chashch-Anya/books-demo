@@ -20,7 +20,6 @@ Router.map(function() {
   });
 
   this.route('404',{path:'*path'});
-  // this.route('error',{path:'/:error'});
   this.route('error', { path: '/:error'});
   this.route('book-form');
 });

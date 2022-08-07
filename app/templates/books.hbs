@@ -1,26 +1,36 @@
-<br>
-<br>
-<div class="panel-heading">
-    <div class="search">
-        {{input type="text" placeholder="Search by book name" value=search}}
-    </div>
-    {{#link-to "books.create" class="btn-new"}}
-    <div class="sr-only">Add new book</div>
-    {{/link-to}}
-</div>
+<div class="container h-100">
+    <div class="htop">
+        <h2 class="text-center">Книги</h2>
 
-<div class="panel-content">
-    <h3 class="panel-title">Books</h3>
-    {{#if isLoading}}
-    <div class="welcome-page">
-        <img src="/loading.gif" alt="Loading">
+        <div class="form-row navbar-panel justify-content-between">
+            <div class="col-md-auto">
+                {{#link-to "books.create" class="btn-new"}}
+                <button class="btn btn-outline-primary my-2">Добавить книгу</button>
+                {{/link-to}}
+            </div>
+
+            <div class="col-md-auto search">
+                {{input type="text" class="form-control mr-2" placeholder="Search by book name" value=search}}
+            </div>
+
+               <div class="col-md-auto search">
+                {{input type="text" class="form-control mr-2" placeholder="Поиск по тегам книги" value=search_tag}}
+            </div>
+        </div>
+
+        <div class="panel-content">
+            {{#if isLoading}}
+            <div class="welcome-page">
+                <img src="/loading.gif" alt="Loading">
+            </div>
+            {{else}}
+            <ul class="collection">
+                {{#each model as |books|}}
+                {{book-item pict=books.pict tags=book.tag page_count=books.page_count description=books.description name=books.name author=books.author idBook=books.id tagName='li'}}
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
     </div>
-    {{else}}
-    <ul class="collection">
-        {{#each model as |books|}}
-        {{book-item name=books.name author=books.author idBook=books.id tagName='li'}}
-        {{/each}}
-    </ul>
-    {{/if}}
-</div>
 {{outlet}}
+</div>
