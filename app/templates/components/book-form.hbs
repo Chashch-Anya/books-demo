@@ -1,0 +1,51 @@
+<form class="edit-form" onsubmit={{action "sumbitForm"}}>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-right">Название книги: </label>
+        <div class="col-sm-10">
+            {{input type="text"  class="form-control form-control-lg" placeholder="Название книги" value=book.name}}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-right">Автор: </label>
+        <div class="col-sm-10">
+            {{input type="text"  class="form-control form-control-lg" placeholder="Автор книги" value=book.author}}
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-right">Количество страниц: </label>
+        <div class="col-sm-10">
+            {{input type="text"  class="form-control form-control-lg" placeholder="Количество страниц книги" value=book.page_count}}
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-right">Ссылка на писание книги: </label>
+        <div class="col-sm-10">
+            {{input type="text"  class="form-control form-control-lg" placeholder="Ссылка на сайт с описанием книги" value=book.description}}
+        </div>
+    </div>
+
+    {{!-- <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-right">Обложка книги: </label>
+        {{input-file class="input-group input-group-lg col-sm-10" uploadData=uploadData uploadDataChanged=(action "changeUploadData")}}
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-right">Теги</label>
+        <div class="col-sm-10">
+            {{input-tags tags=book.tags onChange=(action "changeTags")}}
+        </div>
+    </div> --}}
+
+    <div class="form-group row">
+        <div class="col-12 text-right">
+            <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+            {{!-- <button class="btn btn-outline-secondary btn-lg">Отмена</button> --}}
+        </div>
+    </div>
+</form>
