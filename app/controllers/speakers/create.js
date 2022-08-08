@@ -17,9 +17,5 @@ export default Controller.extend({
       await this.get("dataService").createSpeaker(speaker);
       this.transitionToRoute('speakers.index');
     },
-
-    // changeName(firstName, lastName, patronymic) {
-    //   this.set('firstName', 'lastName', 'patronymic');
-    // }
   }
 });

@@ -1,10 +1,11 @@
 {
-  "books": [{
+  "books": [
+    {
       "id": 1,
       "name": "Гордость и предубеждения",
       "author": "Джейн Остин",
       "page_count": "331",
-      "pict": "",
+      "fileName": "",
       "description": "",
       "tags": [
         "классика",
@@ -16,7 +17,7 @@
       "name": "Преступление и наказание",
       "author": "Фёдор Михайлович Достоевский",
       "page_count": "431",
-      "pict": "",
+      "fileName": "",
       "description": "",
       "tags": [
         "классика",
@@ -28,7 +29,7 @@
       "name": "Арсен Люпен",
       "author": "Леблан М.",
       "page_count": "544",
-      "pict": "",
+      "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/2895808/",
       "tags": [
         "проза"
@@ -39,7 +40,7 @@
       "name": "Завтрашний день кошки",
       "author": "Бернан Вербер",
       "page_count": "320",
-      "pict": "",
+      "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/2909162/",
       "tags": [
         "фантастика",
@@ -51,7 +52,7 @@
       "name": "Эгоистичный ген",
       "author": "Ричард Докинз",
       "page_count": "512",
-      "pict": "",
+      "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/446491/",
       "tags": [
         "наука"
@@ -62,7 +63,7 @@
       "name": "Обитаемый остров",
       "author": "Аркадий и Борис Стругацкие",
       "page_count": "512",
-      "pict": "",
+      "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/1053036/",
       "tags": [
         "антиутопия",
@@ -70,7 +71,8 @@
       ]
     }
   ],
-  "speakers": [{
+  "speakers": [
+    {
       "id": 1,
       "firstName": "Анатолий",
       "lastName": "Кузнецов",

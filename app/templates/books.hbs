@@ -26,7 +26,7 @@
             {{else}}
             <ul class="collection">
                 {{#each model as |books|}}
-                {{book-item pict=books.pict tags=book.tag page_count=books.page_count description=books.description name=books.name author=books.author idBook=books.id tagName='li'}}
+                {{book-item fileName=books.fileName tags=book.tag page_count=books.page_count description=books.description name=books.name author=books.author idBook=books.id tagName='li'}}
                 {{/each}}
             </ul>
             {{/if}}

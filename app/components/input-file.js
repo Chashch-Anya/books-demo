@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { set } from '@ember/object';
 
-
 export default Component.extend({
     isFileChoosen: computed('uploadData', function () {
         return this.get('uploadData') && this.get('uploadData').files.length;

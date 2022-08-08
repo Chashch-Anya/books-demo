@@ -5,13 +5,14 @@ const funnel = require('broccoli-funnel');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+
     'ember-bootstrap': {
       'bootstrapVersion': 4,
       'importBootstrapCSS': false
     }
   });
 
-  // Use `app.import` to add additional libraries to the generated
+ // Use `app.import` to add additional libraries to the generated
   // output files.
   //
   // If you need to use different assets in different
@@ -28,8 +29,15 @@ module.exports = function (defaults) {
 
   app.import('vendor/jquery.flexberry.downloadFile.js');
   app.import('vendor/jquery.blobajaxtransport.js');
-  // app.import('node_modules/blueimp-file-upload/js/jquery.fileupload.js');
-
+  
+  const css= funnel('node_modules/bootstrap/dist/css',{
+    include:['*.min.css'],
+    destDir:'bootstrap/css',
+  })
+  const js= funnel('node_modules/bootstrap/dist/js',{
+    include:['*.js'],
+    destDir:'bootstrap/js',
+  })
   const jsFiles = funnel('vendor', {
     files: ['popper.min.js', 'tagsinput.js', 'jquery-ui.js'],
     destDir: 'js'
@@ -40,5 +48,5 @@ module.exports = function (defaults) {
     destDir: 'js'
   });
 
-  return app.toTree([jsFiles, jqueryFiles]);
+  return app.toTree([css,js,jsFiles,jqueryFiles]);
 };
