@@ -1,18 +1,9 @@
-<div class="slide-out-bg"></div>
-<div class="slide-out">
-    <div class="slide-out-card">
-        {{#link-to "speakers" class="btn-back"}}
-        <span class="sr-only">Назад</span>
-        {{/link-to}}
-        
-        <div class="slide-out-heading">
-            <div class="title">
-                <h3>Редактирование информации о спикере</h3>
-            </div>
-        </div>
+<div class="container h-100">
+    <div class="htop">
+        {{#link-to "speakers" class="btn-back"}}<span class="sr-only">Назад</span>{{/link-to}}
+        <h3>Редактирование информации о спикере: {{model.lastName}} {{model.firstName}} {{model.patronymic}}
+        </h3>
+        {{speaker-form speaker=model onsumbit=(action "saveSpeaker")}}
 
-        <div class="slide-out-content">
-            {{speaker-form speaker=model onsumbit=(action "saveSpeaker")}}
-        </div>
     </div>
 </div>

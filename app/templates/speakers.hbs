@@ -11,23 +11,23 @@
             </div>
 
             <div class="col-md-auto search">
-                    {{input type="text" placeholder="Поиск по спикерам" value=search}}
+                {{input type="text" placeholder="Поиск по спикерам" value=search}}
             </div>
         </div>
 
-        <div class="panel-content">
-             {{#if isLoading}}
+        <div class="row row-cols-1 row-cols-md-3">
+            {{#if isLoading}}
             <div class="welcome-page">
                 <img src="/loading.gif" alt="Loading">
             </div>
             {{else}}
-            <ul class="collection">
+            {{!-- <div class="row"> --}}
                 {{#each model as |speakers|}}
-                {{speaker-item patronymic=speakers.patronymic firstName=speakers.firstName lastName=speakers.lastName idSpeaker=speakers.id tagName='li'}}
+                {{speaker-item speaker=speakers}}
                 {{/each}}
-            </ul>
+            {{!-- </div>  --}}
             {{/if}}
         </div>
     </div>
     {{outlet}}
-    </div>
+</div>

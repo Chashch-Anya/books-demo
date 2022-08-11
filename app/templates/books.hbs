@@ -18,17 +18,17 @@
             </div>
         </div>
 
-        <div class="panel-content">
+      <div class="row row-cols-1 row-cols-md-3">
             {{#if isLoading}}
             <div class="welcome-page">
                 <img src="/loading.gif" alt="Loading">
             </div>
             {{else}}
-            <ul class="collection">
+            {{!-- <div class="row"> --}}
                 {{#each model as |books|}}
-                {{book-item fileName=books.fileName tags=book.tag page_count=books.page_count description=books.description name=books.name author=books.author idBook=books.id tagName='li'}}
+                {{book-item book=books}}
                 {{/each}}
-            </ul>
+            {{!-- </div>  --}}
             {{/if}}
         </div>
     </div>
