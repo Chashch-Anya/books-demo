@@ -13,7 +13,7 @@ export default Route.extend({
       let promise = new Promise((resolve, reject) => {
         later(async () => {
           try {
-            let books;
+          let books;
             if (search && search_tag) {
               books = await this.get("dataService").getBooks(search, search_tag);
             } else
@@ -39,7 +39,7 @@ export default Route.extend({
         if (promise === this.get('modelPromise')) {
           this.set('controller.isLoading', false);
         }
-      });
+       });
 
       this.set('modelPromise', promise);
       return {

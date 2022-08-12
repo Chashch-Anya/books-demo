@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { set } from '@ember/object';
+// import { set } from '@ember/object';
 import {inject as service} from '@ember/service';
 import EmberObject from '@ember/object'
 
@@ -28,25 +28,12 @@ export default Controller.extend({
       // set(this, 'isUploadingFile', true);
       // const uploadData = get(this, 'uploadData');
 
-      await this.get("dataService").createBook(
-        book
-      //   {
-      //   name: this.get('name'),
-      //   author: this.get('author'),
-      //   page_count: this.get('page_count'),
-      //   description: this.get('description'),
-      //   tags: this.get('tags').toString().split(','),
-      //   fileName: '',
-      // }
-      // , uploadData
-      );
-
-      // set(this, 'isUploadingFile', false);
+      await this.get("dataService").createBook(book);
       this.transitionToRoute('books.index');
     },
 
-    changeUploadData(uploadData) {
-      set(this, 'uploadData', uploadData);
-    },
+    // changeUploadData(uploadData) {
+    //   set(this, 'uploadData', uploadData);
+    // },
   },
 });

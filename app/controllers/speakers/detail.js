@@ -7,8 +7,12 @@ export default Controller.extend({
   dataService: service('data2'),
   actions: {
     async deleteSpeaker(speaker) {
-      await this.get('dataService').deleteSpeaker(speaker);
-      this.transitionToRoute('speakers.index');
+      try {
+        await this.get('dataService').deleteSpeaker(speaker);
+        this.transitionToRoute('speakers.index');
+      } catch (e) {
+        this.send('error', new Error('Connection failed'));
+      }
     }
   }
 });

@@ -7,6 +7,7 @@ export default Route.extend({
           name: '',
           author: '',
           page_count: '',
+          filename:'',
           description: '',
           tags: [],
         });
