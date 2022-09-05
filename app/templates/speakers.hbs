@@ -21,11 +21,9 @@
                 <img src="/loading.gif" alt="Loading">
             </div>
             {{else}}
-            {{!-- <div class="row"> --}}
                 {{#each model as |speakers|}}
                 {{speaker-item speaker=speakers}}
                 {{/each}}
-            {{!-- </div>  --}}
             {{/if}}
         </div>
     </div>

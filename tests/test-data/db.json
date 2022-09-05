@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Гордость и предубеждения",
       "author": "Джейн Остин",
-      "page_count": "331",
+      "pageCount": "331",
       "fileName": "",
       "description": "",
       "tags": [
@@ -16,7 +16,7 @@
       "id": 2,
       "name": "Преступление и наказание",
       "author": "Фёдор Михайлович Достоевский",
-      "page_count": "431",
+      "pageCount": "431",
       "fileName": "",
       "description": "",
       "tags": [
@@ -28,7 +28,7 @@
       "id": 3,
       "name": "Арсен Люпен",
       "author": "Леблан М.",
-      "page_count": "544",
+      "pageCount": "544",
       "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/2895808/",
       "tags": [
@@ -39,7 +39,7 @@
       "id": 4,
       "name": "Завтрашний день кошки",
       "author": "Бернан Вербер",
-      "page_count": "320",
+      "pageCount": "320",
       "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/2909162/",
       "tags": [
@@ -51,7 +51,7 @@
       "id": 5,
       "name": "Эгоистичный ген",
       "author": "Ричард Докинз",
-      "page_count": "512",
+      "pageCount": "512",
       "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/446491/",
       "tags": [
@@ -62,7 +62,7 @@
       "id": 6,
       "name": "Обитаемый остров",
       "author": "Аркадий и Борис Стругацкие",
-      "page_count": "512",
+      "pageCount": "512",
       "fileName": "",
       "description": "https://www.chitai-gorod.ru/catalog/book/1053036/",
       "tags": [
@@ -74,33 +74,84 @@
   "speakers": [
     {
       "id": 1,
+      "type": "speaker",
       "firstName": "Анатолий",
       "lastName": "Кузнецов",
       "patronymic": "Анатольевич"
     },
     {
-      "id": 2,
-      "firstName": "Анастасия",
-      "lastName": "Ухова",
-      "patronymic": "Сергеевна"
-    },
-    {
       "id": 3,
+      "type": "speaker",
       "firstName": "Сергей",
       "lastName": "Борисов",
       "patronymic": "Сергеевич"
     },
     {
       "id": 4,
+      "type": "speaker",
       "firstName": "Татьяна",
       "lastName": "Лесова",
       "patronymic": "Анатольевна"
     },
     {
       "id": 5,
+      "type": "speaker",
       "firstName": "Михаил",
       "lastName": "Царь",
       "patronymic": "Денисович"
+    }
+  ],
+  "meetings": [
+    {
+      "id": 1,
+      "meetDate": "2022-08-20T19:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "meetDate": "2022-08-20T19:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "meetDate": "2022-08-19T19:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "meetDate": "2022-08-20T19:00:00.000Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "speakerId": 1,
+      "bookId": 1,
+      "meetingId": 1,
+      "reportDate": "20.08.2022",
+      "bookMark": 3,
+      "presentation": "",
+      "video": "",
+      "review": "No bad book!"
+    },
+    {
+      "id": 3,
+      "speakerId": 3,
+      "bookId": 3,
+      "meetingId": 3,
+      "reportDate": "20.08.2022",
+      "bookMark": 3,
+      "presentation": "",
+      "video": "",
+      "review": "No bad book!"
+    },
+    {
+      "id": 4,
+      "speakerId": 4,
+      "bookId": 4,
+      "meetingId": 1,
+      "reportDate": "20.08.2022",
+      "bookMark": 3,
+      "presentation": "",
+      "video": "",
+      "review": "No bad book!"
     }
   ]
 }

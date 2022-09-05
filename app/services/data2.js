@@ -77,5 +77,14 @@ export default Service.extend({
       },
       body: JSON.stringify(speaker)
     });
-  }
+  },
+  getMeetings(search) {
+    let queryParams = '';
+    if(search)
+    {
+      queryParams=`?q=${search}`;
+    }
+
+    return fetch(`http://localhost:3000/meetings${queryParams}`).then((response) => response.json());
+  },
 });

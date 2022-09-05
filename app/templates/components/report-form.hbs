@@ -1,0 +1,54 @@
+<form onsubmit={{action "saveReport"}} class="edit-form">
+
+  <div class="form-group">
+    <label>Выберите Книгу для доклада: </label>
+      {{#power-select searchEnabled=true searchField="title" onchange=(action (mut book)) selected=book search=(action "searchBook") as |book|}}
+        {{book.title}}
+      {{/power-select}}
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Оценка выбранной книги:</label>
+    <div class="col-sm-10">
+      {{input type="number" value=bookMark class="form-control form-control-lg" placeholder="Оцените книгу по шкаоле от 1 до 5"}}
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Файл презентации:</label>
+    <div class="col-sm-10">
+      {{input type="url" value=presentation class="form-control form-control-lg" placeholder="Н-р: http://www.presentation.com"}}
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Ссылка на видео:</label>
+    <div class="col-sm-10">
+      {{input type="url" value=video class="form-control form-control-lg" placeholder="Н-р: http://www.video.com"}}
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label>Выберите Спикера</label>
+      {{#power-select searchEnabled=true onchange=(action (mut speaker)) selected=speaker search=(action "searchSpeaker") as |speaker|}}
+        {{speaker.surname}} {{speaker.name}} {{speaker.patronymic}}
+      {{/power-select}}
+  </div>  
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Рецензия на книгу:</label>
+    <div class="col-sm-10">
+      {{textarea type="text" rows="6" value=review class="form-control form-control-lg" placeholder="Напишите отзыв о книге"}}
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-6">
+      <button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
+    </div>
+    <div class="col-6 text-right">
+      {{#link-to "meeting-edit" meeting.id class="btn btn-outline-secondary btn-lg" }}Отмена{{/link-to}}
+    </div>
+	</div>
+
+</form>

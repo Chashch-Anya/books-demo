@@ -6,9 +6,8 @@ export default Route.extend({
       if (transition) {
         transition.abort();
       }
-      this.intermediateTransitionTo('error', {
-        error: error.message
-      });
+      this.intermediateTransitionTo('error', {error: error.message});
+      return true;
     }
   }
 });

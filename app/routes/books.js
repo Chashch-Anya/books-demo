@@ -1,50 +1,56 @@
 import Route from '@ember/routing/route';
-import {  inject as service} from '@ember/service';
-import { Promise} from 'rsvp';
-import {later} from '@ember/runloop';
+// import {inject as service} from '@ember/service';
 
 export default Route.extend({
-    dataService: service('data2'),
-    queryParams: {
-      search: {refreshModel: true},
-      search_tag: {refreshModel: true}
+  // dataService: service('data2'),
+  queryParams: {
+    search: {
+      refreshModel: true
     },
-    model({search,search_tag }) {
-      let promise = new Promise((resolve, reject) => {
-        later(async () => {
-          try {
-          let books;
-            if (search && search_tag) {
-              books = await this.get("dataService").getBooks(search, search_tag);
-            } else
-            if (search) {
-              books = await this.get("dataService").getBooks(search);
-            } else
-            if (search_tag) {
-              books = await this.get("dataService").getBooks(search_tag);
-            } else {
-              books = await this.get("dataService").getBooks();
-            }
+    search_tag: {
+      refreshModel: true
+    }
+  },
 
-            resolve(books);
-          } catch (e) {
-            reject("Connection failed")
-          }
-        }, 1000)
-      }).
-      then((books) => {
-        this.set('controller.model', books);
-      }).
-      finally(() => {
-        if (promise === this.get('modelPromise')) {
-          this.set('controller.isLoading', false);
-        }
-       });
+  model({search, search_tag }) {
 
-      this.set('modelPromise', promise);
-      return {
-        isLoading: true
-      };
+      if (search && search_tag) {
+        // return this.get("dataService").getBooks(search, search_tag);
+      } else
+      if (search) {
+        // return this.get("dataService").getBooks(search);
+        return this.get('store').query('book', { q: search });
+      } else
+      // if (search_tag) {
+        // return  this.get("dataService").getBooks(search_tag);
+      // } else
+       {
+        return this.get('store').findAll('book');
+      }
+  },
+
+  setupController(controller, model) {
+    this._super(...arguments);
+    // if (this.get('modelPromise')) {
+    //   controller.set('isLoading', true);
+    // }
+  },
+
+
+  // resetController(controller, isExiting, transition) {
+  //   this._super(...arguments);
+  //   if (isExiting) {
+  //     controller.set('isLoading', false);
+  //     this.set('modelPromise', null);
+  //   }
+  // },
+
+  actions: {
+    refreshAuthors() {
+      // this.refresh();
     },
-  }
-);
+    // loading(transition, originRoute) {
+    //   return false;
+    // }
+},
+})

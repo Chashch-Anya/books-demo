@@ -1,0 +1,29 @@
+<div class="container h-100">
+  <div class="htop">
+    <h3 class="text-center">Редактирование встречи за</h3>
+      <h4 class="text-center">{{model.meetDate}}</h4>
+    {{meeting-form meeting=model onsubmit=(action "saveMeeting")}}
+  </div>
+  <div class="form-group row">
+    <div class="col-6">
+      <button type="button" onclick={{ action "deleteMeeting" }} class="btn btn-outline-danger" >Удалить встречу</button>
+    </div>
+    <div class="col-6 text-right">
+      {{#link-to "report-create" model.id class="btn btn-outline-secondary btn-lg" }}Добавить доклад{{/link-to}}
+    </div>
+	</div>
+  <div class="card-footer">
+    <h4 class="text-center">Список докладов:</h4>
+    <ul class="list-group">
+      {{#each model.reports as |report|}}
+        <il class="list-group-item">
+          {{report.reportDate}}: <a href={{report.videoURL}}>Ccылка на доклад</a>
+          {{#link-to "report-edit" report.id class="btn btn-outline-primary" }}
+            Редактировать доклад
+          {{/link-to}}
+        </il>
+      {{/each}} 
+    </ul>
+  </div>  
+</div>
+{{outlet}}

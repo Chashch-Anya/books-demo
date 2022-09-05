@@ -6,10 +6,10 @@ export default Route.extend({
         return EmberObject.create({
           name: '',
           author: '',
-          page_count: '',
+          pageCount: '',
           filename:'',
-          description: '',
-          tags: [],
+          // description: '',
+          // tags: [],
         });
     }
 });

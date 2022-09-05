@@ -1,14 +1,12 @@
 import Controller from '@ember/controller';
-import {inject as service} from '@ember/service';
-import {  set } from '@ember/object';
 
 export default Controller.extend({
-    dataService: service('data2'),
-    actions:{
-        
+    actions:{       
         async saveBook(book) {            
-            await this.get("dataService").updareBook(book);
-            this.transitionToRoute('books.index');
+          this.get('model').setProperties(book);
+          await this.get('model').save();
+          
+          this.transitionToRoute('books.index');
           },
         // changeTags(newTags) {
         //     set(this, 'tags', [...newTags]);
@@ -16,9 +14,9 @@ export default Controller.extend({
         //     // eslint-disable-next-line no-console
         //     console.log(get(this, 'tags'));
         //   },
-          changeUploadData(uploadData) {
-            set(this, 'uploadData', uploadData);
-          }
+          // changeUploadData(uploadData) {
+          //   set(this, 'uploadData', uploadData);
+          // }
     },
     // didReceiveAttrs(){
     //     this._super(...arguments);

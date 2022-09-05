@@ -1,7 +1,6 @@
    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
          {{#link-to "index"}}
-  	    <a class="navbar-brand" href="index">
-  			
+  	    <a class="navbar-brand" href="index">		
   			<img src="logo-dark.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
       		Книжный клуб
   		</a>
@@ -17,7 +16,9 @@
   					 {{/link-to }}	
   				</li>
   				<li class="nav-item">
-  					<a class="nav-link" href="meetings.html">Встречи клуба</a>
+					{{#link-to "meetings"}}
+  					<a class="nav-link" href="meetings">Встречи клуба</a>
+  					{{/link-to}}
   				</li>
   				<li class="nav-item">
   					{{#link-to "books"}}
