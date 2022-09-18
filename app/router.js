@@ -42,6 +42,7 @@ Router.map(function() {
   this.route('meeting-edit');
   this.route('meeting-create');
   this.route('report-detail');
+  this.route('report-edit');
 });
 
 export default Router;
