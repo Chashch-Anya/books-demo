@@ -1,1 +1,13 @@
-{{outlet}}
+   <h1>efddvv</h1>
+   <h1>efddvv</h1>
+   <h1>efddvv</h1>
+    {{#each model as |report|}} 
+      <h4>Дата встречи</h4>
+          <h5>
+            {{report.id}}
+          </h5>            
+      <h4>Список докладов</h4>
+    {{#each report.speakers as |speaker|}} 
+    <h1>{{speaker.id}}</h1>
+    {{/each}}
+    {{/each}}

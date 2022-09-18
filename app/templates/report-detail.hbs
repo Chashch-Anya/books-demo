@@ -1,0 +1,13 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{{#each model as |report|}} 
+    <h1>{{report.id}}</h1>
+{{#each report.meeting as |meeting|}} 
+    <h1>{{meeting.id}}</h1>
+
+    {{/each}}
+    {{/each}}

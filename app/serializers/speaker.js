@@ -4,7 +4,7 @@ import ApplicationSerializer from './application';
 export default ApplicationSerializer.extend(DS.EmbeddedRecordsMixin, {
     attrs: {
         reports: {
-          serialize: false,
+          serialize: 'records',
           deserialize: 'records'
         }
       },
@@ -13,4 +13,8 @@ export default ApplicationSerializer.extend(DS.EmbeddedRecordsMixin, {
         hash = this._super(...arguments);
         return hash;
       },
+      
+      extractRelationship(relationshipModelName, relationshipHash) {
+    return this._super(...arguments);
+  }
 })

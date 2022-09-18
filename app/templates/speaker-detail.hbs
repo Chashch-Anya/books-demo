@@ -1,0 +1,22 @@
+<div class="slide-out-bg"></div>
+<div class="slide-out">
+    <div class="slide-out-catd">
+        {{#link-to "speakers"}}
+        <span class="sr-only">Назад</span>
+        {{/link-to}}
+
+        <div class="slide-out-heading">
+            <div class="title">
+                <h3>{{model.lastName}} {{model.firstName}} {{model.patronymic}}</h3>             <div class="actions">
+                    {{!-- {{#link-to "speaker-edit" model.id class="btn-pop"}}
+                    Редактировать
+                    {{/link-to}} --}}
+                       {{#each model.reports as |report|}} 
+    <h1>{{report.id}}</h1>
+    {{/each}}
+                    <button class="btn-recessed" onclick={{action "deleteSpeaker" model}}>Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

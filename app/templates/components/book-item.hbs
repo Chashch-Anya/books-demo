@@ -2,7 +2,7 @@
     <div class="card">
         <img src="img/book-cover.jpg" class="card-img-top" alt="Обложка книги">
         <div class="card-body">
-            {{#link-to "books.detail" book.id}}
+            {{#link-to "book-detail" book.id}}
             <h5 class="card-title">{{book.name}}</h5>
             {{/link-to}}
         </div>
@@ -10,18 +10,25 @@
             <li class="list-group-item">
                 <div><strong>Автор</strong>: {{book.author}}</div>
                 <div><strong>Количество страниц</strong>: {{book.pageCount}}</div>
-                {{!-- <div><strong>Теги</strong>: </div> --}}
+                {{!-- <div><strong>Теги</strong>:
+                    {{#each book.tags as |tag|}}
+                    <a href="#" class="tag-link"><span class="small">#{{tag}}</span></a>
+                    {{/each}}
+                </div> --}}
             </li>
         </ul>
-         <div class="card-footer">
+        <div class="card-footer">
             <div class="row">
+                <div class="col">
+                    <a href={{book.description}} class="card-link line-offset">Описание</a>
+                </div>
                 <div class="col text-right">
-                    {{#link-to "books.edit" book.id }}
+                    {{#link-to "book-edit" book.id }}
                     <button type="button" class="btn btn-edit">Редактировать
                     </button>
                     {{/link-to }}
-                    {{!-- <button type="button" class="btn btn-trash" onclick={{action "deleteBook" book}}>Удалить</button> --}}
-                    <button type="button" class="btn btn-trash">Удалить</button>
+                    <button type="button" class="btn btn-trash" onclick={{action "deleteBook" book}}>Удалить</button>
+                    {{!-- <button type="button" class="btn btn-trash">Удалить</button> --}}
                 </div>
             </div>
         </div>

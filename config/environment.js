@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-quickstart',
     environment,
-    backendURL:"http://localhost:3000",
+    backendURL:'http://localhost:3000',
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

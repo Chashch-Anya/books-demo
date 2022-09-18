@@ -1,34 +1,53 @@
 import Route from '@ember/routing/route';
+import RSVP from 'rsvp';
+
+import { PER_PAGE } from '../controllers/meetings';
 
 export default Route.extend({
-  queryParams:{
-  },
-  model() {
-    return this.get('store').findAll('meeting');
-  },
+  queryParams: {
+    page: {
+        refreshModel: true
+    },
+    speaker: {
+        refreshModel: true
+    },
+    book: {
+        refreshModel: true
+    },
+    date: {
+        refreshModel: true
+    },
+},
+  model({speaker, page, book, date}) {
+    const query = {
+      _page: page,
+      _limit: PER_PAGE,
+    };
 
-  setupController(controller, model) {
-    this._super(...arguments);
-    // if (this.get('modelPromise')) {
-    //   controller.set('isLoading', true);
-    // }
-  },
+    if(speaker) { 
+      query.speaker = speaker;
+    }
+    
+    if(book) {
+      query.book = book;
+    }
+    
+    if(date) {
+      query.date = date;
+    }
 
-  // resetController(controller, isExiting, transition) {
-  //   this._super(...arguments);
-  //   if (isExiting) {
-  //     controller.set('isLoading', false);
-  //     this.set('modelPromise', null);
-  //   }
-  // },
+  return RSVP.hash({
+      speakers: this.store.findAll('speaker'),
+      books: this.store.findAll('book'),
+      meetings: this.store.query('meeting', query),
+  });
+
+    // return this.store.findAll('meeting');
+  },
 
   actions: {
-    refreshAuthors() {
-      // this.refresh();
-    },
-    // loading(transition, originRoute) {
-    //   return false;
-    // }
-
-  },
+    loading() {
+      return false;
+    }
+  }
 });

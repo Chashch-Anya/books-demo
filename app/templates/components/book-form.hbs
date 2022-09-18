@@ -1,51 +1,36 @@
 <form onsubmit={{action "sumbitForm"}}>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label text-right">Название книги: </label>
-        <div class="col-sm-10">
-            {{input type="text"  class="form-control form-control-lg" placeholder="Название книги" value=book.name}}
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Название книги: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg"  placeholder="Название книги" value=name}}
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label text-right">Автор: </label>
-        <div class="col-sm-10">
-            {{input type="text"  class="form-control form-control-lg" placeholder="Автор книги" value=book.author}}
-
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Автор: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg"  placeholder="Автор" value=author}}
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label text-right">Количество страниц: </label>
-        <div class="col-sm-10">
-            {{input type="text"  class="form-control form-control-lg" placeholder="Количество страниц книги" value=book.pageCount}}
-
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Количество страниц: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg"  placeholder="Количество страниц" value=pageCount}}
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label text-right">Ссылка на писание книги: </label>
-        <div class="col-sm-10">
-            {{input type="text"  class="form-control form-control-lg" placeholder="Ссылка на сайт с описанием книги" value=book.description}}
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Ссылка на описание книги: </label>
+            <div class="col-sm-10">
+                {{input type="text" class="form-control form-control-lg"  placeholder="Ссылка на описание книги" value=description}}
+            </div>
         </div>
-    </div>
 
-    {{!-- <div class="form-group row">
-        <label class="col-sm-2 col-form-label text-right">Обложка книги: </label>
-        {{input-file class="input-group input-group-lg col-sm-10" uploadData=uploadData uploadDataChanged=(action "changeUploadData")}}
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label text-right">Теги</label>
-        <div class="col-sm-10">
-            {{input-tags tags=book.tags onChange=(action "changeTags")}}
+        <div class="form-group row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-outline-primary btn-lg">Сохранить</button>
+            </div>
         </div>
-    </div> --}}
-
-    <div class="form-group row">
-        <div class="col-12 text-right">
-            <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
-            {{!-- <button class="btn btn-outline-secondary btn-lg">Отмена</button> --}}
-        </div>
-    </div>
+    {{!-- </div> --}}
 </form>

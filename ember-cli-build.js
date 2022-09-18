@@ -24,20 +24,19 @@ module.exports = function (defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
-
   app.import('vendor/tagsinput.css');
 
-  app.import('vendor/jquery.flexberry.downloadFile.js');
-  app.import('vendor/jquery.blobajaxtransport.js');
+  // app.import('vendor/jquery.flexberry.downloadFile.js');
+  // app.import('vendor/jquery.blobajaxtransport.js');
   
-  const css= funnel('node_modules/bootstrap/dist/css',{
-    include:['*.min.css'],
-    destDir:'bootstrap/css',
-  })
-  const js= funnel('node_modules/bootstrap/dist/js',{
-    include:['*.js'],
-    destDir:'bootstrap/js',
-  })
+  // const css= funnel('node_modules/bootstrap/dist/css',{
+  //   include:['*.min.css'],
+  //   destDir:'bootstrap/css',
+  // })
+  // const js= funnel('node_modules/bootstrap/dist/js',{
+  //   include:['*.js'],
+  //   destDir:'bootstrap/js',
+  // })
   const jsFiles = funnel('vendor', {
     files: ['popper.min.js', 'tagsinput.js', 'jquery-ui.js'],
     destDir: 'js'
@@ -48,5 +47,5 @@ module.exports = function (defaults) {
     destDir: 'js'
   });
 
-  return app.toTree([css,js,jsFiles,jqueryFiles]);
+  return app.toTree([jsFiles,jqueryFiles]);
 };

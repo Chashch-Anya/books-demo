@@ -5,7 +5,7 @@
         <div class="form-row navbar-panel justify-content-between">
 
             <div class="col-md-auto">
-                {{#link-to "speakers.create" class="btn-new"}}
+                {{#link-to "speaker-create" class="btn-new"}}
                 <button class="btn btn-outline-primary my-2">Добавить спикера</button>
                 {{/link-to}}
             </div>
@@ -21,9 +21,9 @@
                 <img src="/loading.gif" alt="Loading">
             </div>
             {{else}}
-                {{#each model as |speakers|}}
-                {{speaker-item speaker=speakers}}
-                {{/each}}
+            {{#each model as |speakers|}}
+            {{speaker-item destroyspeaker=(action "deleteSpeaker") speaker=speakers}}
+            {{/each}}
             {{/if}}
         </div>
     </div>

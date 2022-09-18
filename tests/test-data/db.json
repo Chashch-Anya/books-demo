@@ -69,6 +69,14 @@
         "антиутопия",
         "проза"
       ]
+    },
+    {
+      "name": "1",
+      "author": "2",
+      "pageCount": 3,
+      "description": "4",
+      "reports": [],
+      "id": 7
     }
   ],
   "speakers": [
@@ -99,24 +107,38 @@
       "firstName": "Михаил",
       "lastName": "Царь",
       "patronymic": "Денисович"
+    },
+    {
+      "firstName": "1",
+      "lastName": "3",
+      "patronymic": "3",
+      "reports": [],
+      "id": 7
+    },
+    {
+      "firstName": "1",
+      "lastName": "2",
+      "patronymic": "3",
+      "reports": [],
+      "id": 8
     }
   ],
   "meetings": [
     {
       "id": 1,
-      "meetDate": "2022-08-20T19:00:00.000Z"
+      "meetDate": "2022-08-19"
     },
     {
       "id": 2,
-      "meetDate": "2022-08-20T19:00:00.000Z"
+      "meetDate": "2022-08-20"
     },
     {
       "id": 3,
-      "meetDate": "2022-08-19T19:00:00.000Z"
+      "meetDate": "2022-09-19"
     },
     {
       "id": 4,
-      "meetDate": "2022-08-20T19:00:00.000Z"
+      "meetDate": "2022-09-19"
     }
   ],
   "reports": [
@@ -129,7 +151,8 @@
       "bookMark": 3,
       "presentation": "",
       "video": "",
-      "review": "No bad book!"
+      "review": "No bad book!",
+      "reporttDate": null
     },
     {
       "id": 3,
@@ -140,7 +163,8 @@
       "bookMark": 3,
       "presentation": "",
       "video": "",
-      "review": "No bad book!"
+      "review": "No bad book!",
+      "reporttDate": null
     },
     {
       "id": 4,
@@ -151,7 +175,8 @@
       "bookMark": 3,
       "presentation": "",
       "video": "",
-      "review": "No bad book!"
+      "review": "No bad book!",
+      "reporttDate": null
     }
   ]
 }

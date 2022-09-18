@@ -5,7 +5,7 @@ export default Component.extend({
     sumbitForm(e) {
       e.preventDefault();
       this.onsubmit({
-        id: this.get('id'),
+        id: this.get('speakerId'),
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
         patronymic: this.get('patronymic'),
@@ -15,8 +15,9 @@ export default Component.extend({
 
   didReceiveAttrs() {
     this._super(...arguments);
+    
     this.setProperties({
-      id: this.get('speaker.id') ? this.get('speaker.id') : undefined,
+      speakerId: this.get('speaker.id') ? this.get('speaker.id') : undefined,
       firstName: this.get('speaker.firstName'),
       lastName: this.get('speaker.lastName'),
       patronymic: this.get('speaker.patronymic')
